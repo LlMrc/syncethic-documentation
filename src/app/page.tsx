@@ -10,7 +10,8 @@ import {
   Info,
   Globe,
   Package,
-  Layers
+  Layers,
+  Github
 } from 'lucide-react';
 import { Badge } from '@/src/components/ui/badge';
 import Link from 'next/link';
@@ -173,11 +174,27 @@ export default function DocsPage() {
                   Frameworks (NPM / React)
                 </h3>
                 <p className="text-slate-400 leading-relaxed">
-                  For deep integration in Next.js, React, or Vue apps, use our official NPM package.
+                  For deep integration in Next.js, React, or Vue apps, use our official NPM package or start from one of our professional templates.
                 </p>
                 
-                <div className="bg-slate-950 rounded-xl border border-white/10 p-5 font-mono text-sm text-emerald-400 shadow-inner">
-                  pnpm add @syncethic/sdk
+                <div className="flex flex-wrap gap-4 mt-2">
+                  <div className="bg-slate-950 rounded-xl border border-white/10 p-5 font-mono text-sm text-emerald-400 shadow-inner flex-1 min-w-[200px]">
+                    pnpm add @syncethic/sdk
+                  </div>
+                  <Link 
+                    href="https://github.com/LlMrc/syncethic-sdk-templates" 
+                    target="_blank"
+                    className="flex items-center gap-4 px-8 py-5 rounded-2xl bg-linear-to-r from-blue-600/20 to-purple-600/20 border border-white/10 hover:border-blue-500/50 hover:bg-blue-600/10 transition-all group shadow-2xl shadow-blue-500/10"
+                  >
+                    <div className="p-3 bg-white/5 rounded-xl group-hover:bg-blue-500/10 transition-colors">
+                      <Github className="w-6 h-6 text-white group-hover:text-blue-400 group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div>
+                      <div className="text-lg font-bold text-white tracking-tight">Ready-made Templates</div>
+                      <div className="text-xs text-slate-400 font-medium">Clone, configure, and deploy in minutes</div>
+                    </div>
+                    <ArrowRight className="ml-4 w-5 h-5 text-slate-600 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+                  </Link>
                 </div>
 
                 <div className="bg-slate-900/50 rounded-2xl border border-white/10 overflow-hidden mt-4 shadow-2xl">
