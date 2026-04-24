@@ -10,12 +10,26 @@ import {
   Info,
   Globe,
   Package,
-  Layers,
-  Github
+  Layers
 } from 'lucide-react';
 import { Badge } from '@/src/components/ui/badge';
 import Link from 'next/link';
 import Image from 'next/image';
+
+const GithubIcon = ({ className }: { className?: string }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
+);
 
 export default function DocsPage() {
   return (
@@ -38,7 +52,7 @@ export default function DocsPage() {
             </Link>
           </div>
           <Link 
-            href="https://syncethic.ai/dashboard" 
+            href="https://syncethicai.com/dashboard" 
             className="text-sm font-semibold bg-white/5 hover:bg-white/10 text-white px-5 py-2.5 rounded-full border border-white/10 transition-all active:scale-95"
           >
             Go to Dashboard
@@ -75,7 +89,7 @@ export default function DocsPage() {
               <div className="bg-slate-900/50 rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
                 <div className="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/5">
                   <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/20 font-mono text-[10px] uppercase">Post</Badge>
-                  <code className="text-sm text-slate-300 font-mono">https://syncethic.ai/api/v1/chat</code>
+                  <code className="text-sm text-slate-300 font-mono">https://syncethicai.com/api/v1/chat</code>
                 </div>
                 <div className="p-6">
                    <p className="text-slate-400 mb-6 text-sm">
@@ -93,7 +107,7 @@ export default function DocsPage() {
                 <h2 className="text-3xl font-bold text-white">Authentication</h2>
               </div>
               <p className="text-slate-400">
-                All requests must be authenticated using the <code className="text-white bg-white/5 px-2 py-0.5 rounded">x-api-key</code> header. You can generate multiple keys in the <Link href="https://syncethic.ai/dashboard/keys" className="text-blue-400 hover:underline">API Keys</Link> section of your dashboard.
+                All requests must be authenticated using the <code className="text-white bg-white/5 px-2 py-0.5 rounded">x-api-key</code> header. You can generate multiple keys in the <Link href="https://syncethicai.com/dashboard/keys" className="text-blue-400 hover:underline">API Keys</Link> section of your dashboard.
               </p>
 
               <div className="bg-slate-950 rounded-xl border border-white/10 p-6 font-mono text-sm group shadow-xl transition-all hover:border-white/20">
@@ -130,7 +144,7 @@ export default function DocsPage() {
                 </p>
                 <div className="bg-slate-900/50 rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
                   <pre className="p-6 overflow-x-auto text-[13px] font-mono leading-relaxed text-blue-200">
-{`<script src="https://syncethic.ai/sdk/syncethic.min.js"></script>
+{`<script src="https://syncethicai.com/sdk/syncethic.min.js"></script>
 <script>
   SyncEthic.mount({
     apiKey: 'sk_global_YOUR_KEY',
@@ -187,7 +201,7 @@ export default function DocsPage() {
                     className="flex items-center gap-4 px-8 py-5 rounded-2xl bg-linear-to-r from-blue-600/20 to-purple-600/20 border border-white/10 hover:border-blue-500/50 hover:bg-blue-600/10 transition-all group shadow-2xl shadow-blue-500/10"
                   >
                     <div className="p-3 bg-white/5 rounded-xl group-hover:bg-blue-500/10 transition-colors">
-                      <Github className="w-6 h-6 text-white group-hover:text-blue-400 group-hover:scale-110 transition-transform" />
+                      <GithubIcon className="w-6 h-6 text-white group-hover:text-blue-400 group-hover:scale-110 transition-transform" />
                     </div>
                     <div>
                       <div className="text-lg font-bold text-white tracking-tight">Ready-made Templates</div>
@@ -283,7 +297,7 @@ export default function Layout({ children }) {
                     </span>
                   </div>
                   <pre className="p-6 overflow-x-auto text-[13px] font-mono leading-relaxed text-blue-200">
-{`curl -X POST https://syncethic.ai/api/v1/chat \\
+{`curl -X POST https://syncethicai.com/api/v1/chat \\
   -H "Content-Type: application/json" \\
   -H "x-api-key: YOUR_API_KEY" \\
   -d '{
