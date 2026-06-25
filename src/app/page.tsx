@@ -36,41 +36,42 @@ export default function DocsPage() {
     <div className="min-h-screen bg-slate-950 text-slate-300 font-sans selection:bg-blue-500/30 selection:text-blue-200">
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-slate-950/80 backdrop-blur-xl">
-        <div className="container max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3 group translate-z-0 transition-transform hover:scale-105">
-            <div className="bg-slate-900 p-0.5 rounded-xl shadow-2xl border border-white/10 ring-1 ring-white/5">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-2 sm:gap-3 group translate-z-0 transition-transform hover:scale-105">
+            <div className="bg-slate-900 p-0.5 rounded-xl shadow-2xl border border-white/10 ring-1 ring-white/5 shrink-0">
               <Image 
                 src="/logo.png" 
                 alt="SyncEthic AI Logo" 
                 width={40} 
                 height={40} 
-                className="rounded-lg grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
-            <Link href="/" className="font-bold text-2xl text-white tracking-tight flex items-center gap-2">
+            <Link href="/" className="font-bold text-lg sm:text-2xl text-white tracking-tight flex items-center gap-1 sm:gap-2">
               SyncEthic <span className="text-blue-500 font-black">AI</span>
             </Link>
           </div>
           <Link 
             href="https://syncethicai.com/dashboard" 
-            className="text-sm font-semibold bg-white/5 hover:bg-white/10 text-white px-5 py-2.5 rounded-full border border-white/10 transition-all active:scale-95"
+            className="text-xs sm:text-sm font-semibold bg-white/5 hover:bg-white/10 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/10 transition-all active:scale-95 whitespace-nowrap"
           >
-            Go to Dashboard
+            <span className="hidden sm:inline">Go to Dashboard</span>
+            <span className="sm:hidden">Dashboard</span>
           </Link>
         </div>
       </header>
 
-      <main className="container max-w-7xl mx-auto px-6 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-[1fr_320px] gap-16 items-start">
+      <main className="container max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-24 overflow-hidden lg:overflow-visible">
+        <div className="grid lg:grid-cols-[1fr_320px] gap-12 lg:gap-16 items-start">
           
           {/* Main Content */}
-          <div className="space-y-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div className="space-y-16 lg:space-y-20 animate-in fade-in slide-in-from-bottom-4 duration-700 min-w-0">
             
             <section className="space-y-6">
               <Badge variant="outline" className="text-blue-400 border-blue-400/20 bg-blue-400/5 px-4 py-1.5 text-xs tracking-widest uppercase font-bold rounded-full">
                 Developer API Documentation
               </Badge>
-              <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
                 Integrate Intelligence with <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-400">Guardrails.</span>
               </h1>
               <p className="text-xl text-slate-400 leading-relaxed max-w-2xl">
@@ -119,7 +120,7 @@ export default function DocsPage() {
                     <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/40"></div>
                   </div>
                 </div>
-                <div className="space-y-1">
+                <div className="space-y-1 break-all sm:break-normal">
                   <p><span className="text-pink-400">Content-Type</span>: application/json</p>
                   <p><span className="text-pink-400">x-api-key</span>: sync_live_your_key_here</p>
                 </div>
@@ -198,16 +199,19 @@ export default function DocsPage() {
                   <Link 
                     href="https://github.com/LlMrc/syncethic-sdk-templates" 
                     target="_blank"
-                    className="flex items-center gap-4 px-8 py-5 rounded-2xl bg-linear-to-r from-blue-600/20 to-purple-600/20 border border-white/10 hover:border-blue-500/50 hover:bg-blue-600/10 transition-all group shadow-2xl shadow-blue-500/10"
+                    className="flex flex-col sm:flex-row items-start sm:items-center gap-4 px-5 sm:px-8 py-5 rounded-2xl bg-linear-to-r from-blue-600/20 to-purple-600/20 border border-white/10 hover:border-blue-500/50 hover:bg-blue-600/10 transition-all group shadow-2xl shadow-blue-500/10 w-full sm:w-auto flex-1 min-w-[200px]"
                   >
-                    <div className="p-3 bg-white/5 rounded-xl group-hover:bg-blue-500/10 transition-colors">
-                      <GithubIcon className="w-6 h-6 text-white group-hover:text-blue-400 group-hover:scale-110 transition-transform" />
+                    <div className="flex w-full sm:w-auto items-center justify-between sm:justify-start">
+                      <div className="p-3 bg-white/5 rounded-xl group-hover:bg-blue-500/10 transition-colors shrink-0">
+                        <GithubIcon className="w-6 h-6 text-white group-hover:text-blue-400 group-hover:scale-110 transition-transform" />
+                      </div>
+                      <ArrowRight className="sm:hidden w-5 h-5 text-slate-600 group-hover:text-blue-400 transition-all" />
                     </div>
-                    <div>
+                    <div className="flex-1 w-full text-left">
                       <div className="text-lg font-bold text-white tracking-tight">Ready-made Templates</div>
                       <div className="text-xs text-slate-400 font-medium">Clone, configure, and deploy in minutes</div>
                     </div>
-                    <ArrowRight className="ml-4 w-5 h-5 text-slate-600 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="hidden sm:block ml-4 w-5 h-5 text-slate-600 group-hover:text-blue-400 group-hover:translate-x-1 transition-all shrink-0" />
                   </Link>
                 </div>
 
